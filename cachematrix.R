@@ -2,8 +2,10 @@
 ## functions do
 
 ## Write a short comment describing this function
+
 # R code to compute inverse of matrix by caching the data
-makeCacheMatrix <- function(gettingdat = matrix()) {
+makeCacheMatrix <- function(x = matrix()) {
+  gettingdat <- x
   lime <- NULL
   set <- function(y) {
     gettingdat <<- y			#stores data
@@ -18,7 +20,8 @@ makeCacheMatrix <- function(gettingdat = matrix()) {
        getinverse = getinverse)
 }
 
-cacheSolve <- function(gettingdat, ...) {
+cacheSolve <- function(x, ...) {
+  gettingdat <- x
   lime <- gettingdat$getinverse()	#fetch already evaluated data
   if (!is.null(lime)) {
     message("getting the cached data from prev")		#checkif already evaluated
